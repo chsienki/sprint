@@ -63,7 +63,7 @@ While at some point in compiling C code you are likely to switch to a build syst
 
 Of course in todays software development world its difficult to make a useful program without depending on third party libraries, and sprint aims to allow you to 'grow up' your project via comment directives. These allow you to control aspects of your program such as which NuGet packages it depends on, and which dotnet version you want to target.
 
-[^1] Of course it only _appears_ empty thanks to the work of minimal project files. In reality the build system is pulling in a lot of complex logic to compile your application.
+[^1]: Of course it only _appears_ empty thanks to the work of minimal project files. In reality the build system is pulling in a lot of complex logic to compile your application.
 
 ## Supported Directives
 
