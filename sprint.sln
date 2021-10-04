@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31309.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint", "Sprint\Sprint.csproj", "{5658C5F3-ADB1-42D9-80F9-11680B0FC067}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint.Parser", "Sprint.Parser\Sprint.Parser.csproj", "{BE802AE2-C5A8-4998-B4DC-067066DFF242}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5658C5F3-ADB1-42D9-80F9-11680B0FC067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5658C5F3-ADB1-42D9-80F9-11680B0FC067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5658C5F3-ADB1-42D9-80F9-11680B0FC067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5658C5F3-ADB1-42D9-80F9-11680B0FC067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE802AE2-C5A8-4998-B4DC-067066DFF242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE802AE2-C5A8-4998-B4DC-067066DFF242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE802AE2-C5A8-4998-B4DC-067066DFF242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE802AE2-C5A8-4998-B4DC-067066DFF242}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A22877DB-797D-41C4-B226-F0C646508F77}
+	EndGlobalSection
+EndGlobal
