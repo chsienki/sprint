@@ -6,7 +6,7 @@ dotnet sprint allows you to run a execute a single dotnet source file from the c
 
 ## Basic Usage
 
-Sprint allows you to embed information that is usually written in a project file directly into a source file via comment directives. When you execute the file via `dotnet sprint` these directives are parsed and used to compile an executable that is then run.
+Sprint allows you to embed information that is usually written in a project file directly into a source file via [comment directives](#supported-directives) . When you execute the file via `dotnet sprint` these directives are parsed and used to compile an executable that is then run.
 
 For example, given jsonDemo.cs:
 
