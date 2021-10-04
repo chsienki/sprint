@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 Console.WriteLine(JsonConvert.SerializeObject(new { hello = "world" }));
 ```
 
-`dotnet sprint jsonDemo.cs` will compile and execute the code, producing the following output: `{"hello" : "world" }`
+`dotnet sprint jsonDemo.cs` will compile and execute the code, producing the following output: `{"hello":"world" }`
 
 Under the covers, sprint will parse the `nuget:` comment directive, and pull the required dependency from nuget as required. It will then compile and run the program, without you needing to think about a separate project file.
 
