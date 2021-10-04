@@ -1,6 +1,6 @@
 # Sprint
 
->_Like a run, but shorter_
+>_Get from A to B fast. Like a run, but different._
 
 dotnet sprint allows you to run a execute a single dotnet source file from the command line, without the need for a separate project file.
 
@@ -13,7 +13,6 @@ For example, given jsonDemo.cs:
 ```cs
 // nuget: Newtonsoft.Json
 using Newtonsoft.Json;
-using System; //TODO: fix this to work with global usings
 
 Console.WriteLine(JsonConvert.SerializeObject(new { hello = "world" }));
 ```
