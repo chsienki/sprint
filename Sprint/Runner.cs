@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Sprint.Parser;
+using System;
 using System.CommandLine;
 using System.CommandLine.IO;
-using System.IO;
-using System.Text;
-using Sprint.Parser;
 using System.Data.HashFunction;
 using System.Data.HashFunction.FNV;
 using System.Diagnostics;
+using System.IO;
 
 namespace Sprint
 {
@@ -64,7 +62,7 @@ namespace Sprint
 
             // directory is a hash of path + filename.
             var tempDirectory = Path.GetTempPath();
-            var dirHash = fnva.ComputeHash(file.Directory.FullName).AsHexString();
+            var dirHash = fnva.ComputeHash(file.Directory!.FullName).AsHexString();
             this.outputDir = Path.Combine(tempDirectory, dirHash + "_" + file.Name);
             this.projectFilePath = Path.Combine(this.outputDir, $"temp{file.Extension}proj");
             this.outputFile = Path.Combine(this.outputDir, file.Name);
@@ -144,7 +142,7 @@ namespace Sprint
             LogVerbose("Watching program");
 
             // when watching we set up a file listener for the original. we re-parse and copy accross any changes as they occur
-            using var watcher = new FileSystemWatcher(file.Directory.FullName);
+            using var watcher = new FileSystemWatcher(file.Directory!.FullName);
 
             watcher.NotifyFilter = NotifyFilters.Attributes
                                  | NotifyFilters.CreationTime
@@ -176,11 +174,14 @@ namespace Sprint
             ProcessStartInfo psi = new ProcessStartInfo(processname, args) { WorkingDirectory = outputDir, RedirectStandardOutput = redirect };
             LogVerbose($"{psi.FileName} {psi.Arguments}");
             var process = Process.Start(psi);
+            if (process is null)
+                return -1;
+
             process.WaitForExit();
 
             if (redirect && (verbose || process.ExitCode != 0))
             {
-                output.Out.Write(process.StandardOutput.ReadToEnd().Replace(outputDir, file.Directory.FullName));
+                output.Out.Write(process.StandardOutput.ReadToEnd().Replace(outputDir, file.Directory!.FullName));
             }
 
             return process.ExitCode;
@@ -210,6 +211,8 @@ namespace Sprint
             stringWriter.WriteLine("    <PropertyGroup>");
             stringWriter.WriteLine("        <OutputType>exe</OutputType>");
             stringWriter.WriteLine("        <LangVersion>latest</LangVersion>");
+            stringWriter.WriteLine("        <ImplicitUsings>true</ImplicitUsings>");
+            stringWriter.WriteLine("        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>");
             stringWriter.WriteLine($"        <TargetFramework>{projectInfo.TargetFramework}</TargetFramework>");
             stringWriter.WriteLine("    </PropertyGroup>");
 

@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Json Demo": {
+      "commandName": "Project",
+      "commandLineArgs": "$(MSBuildThisFileDirectory)\\..\\Examples\\JsonDemo.cs"
+    },
+    "Json Demo (Verbose)": {
+      "commandName": "Project",
+      "commandLineArgs": "-v -b $(MSBuildThisFileDirectory)\\..\\Examples\\JsonDemo.cs"
+    },
+    "Minimal Demo (Watch)": {
+      "commandName": "Project",
+      "commandLineArgs": "watch -v $(MSBuildThisFileDirectory)\\..\\Examples\\MinimalHosting.cs"
+    }
+  }
+}

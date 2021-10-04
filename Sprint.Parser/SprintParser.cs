@@ -16,7 +16,7 @@ namespace Sprint.Parser
 
         private string sdk = "Microsoft.NET.Sdk";
 
-        private string targetFramework = "netcoreapp3.1";
+        private string targetFramework = "net6.0";
 
         public SprintParser(string lineStarter, StringBuilder? graduatedProgram = null)
         {
