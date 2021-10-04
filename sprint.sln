@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint", "Sprint\Sprint.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint.Parser", "Sprint.Parser\Sprint.Parser.csproj", "{BE802AE2-C5A8-4998-B4DC-067066DFF242}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8D7F70C0-9617-46E1-8307-39AB15001FD6}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\JsonDemo.cs = Examples\JsonDemo.cs
+		Examples\MinimalHosting.cs = Examples\MinimalHosting.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
