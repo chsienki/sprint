@@ -4,8 +4,6 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.IO;
 
-System.Diagnostics.Debugger.Launch();
-
 return new RunnerCommand(Runner.Action.Run, "")
 {
     new RunnerCommand(Runner.Action.Prepare, "Prepares a file for execution without actually running it."),
