@@ -18,6 +18,8 @@ namespace Sprint.Parser
 
         private string targetFramework = "net6.0";
 
+        private bool hasHashbang = false;
+
         public SprintParser(string lineStarter, StringBuilder? graduatedProgram = null)
         {
             this.lineStarter = lineStarter;
@@ -39,7 +41,7 @@ namespace Sprint.Parser
             {
                 parser.ParseLine(reader.ReadLine());
             }
-            return new ProjectInfo(parser.nuGetPackages, parser.sdk, parser.targetFramework);
+            return new ProjectInfo(parser.nuGetPackages, parser.sdk, parser.targetFramework, parser.hasHashbang);
         }
 
         private void ParseLine(string line)
@@ -47,6 +49,7 @@ namespace Sprint.Parser
             // handle the #! specially here, and remove it
             if (line.StartsWith("#!"))
             {
+                hasHashbang = true;
                 return;
             }
 

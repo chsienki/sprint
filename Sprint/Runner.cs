@@ -70,8 +70,13 @@ namespace Sprint
 
         private int Prep(bool restore, bool build)
         {
-            // TODO: check if the first line of the program is #!/
             var projectInfo = SprintParser.ParseFile(file.FullName);
+
+            var fileContent = File.ReadAllLines(file.FullName);
+            if (projectInfo.HasHashbang)
+            {
+                fileContent = fileContent[1..];
+            }
 
             // compute the file hash, so we can either write it or compare it (//TODO: we should do this as we parse the file!)
             var fileHash = fnva.ComputeHash(File.ReadAllBytes(file.FullName), 1024).AsBase64String();
@@ -101,7 +106,7 @@ namespace Sprint
             File.WriteAllText(hashPath, fileHash);
 
             // copy the program over, and write out the project file
-            File.Copy(file.FullName, outputFile, true);
+            File.WriteAllLines(outputFile, fileContent);
 
             WriteProjectFile(projectInfo);
 

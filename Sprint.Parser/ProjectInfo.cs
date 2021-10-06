@@ -6,7 +6,7 @@ namespace Sprint.Parser
 {
     public struct ProjectInfo
     {
-        public ProjectInfo(IList<NuGetInfo> packages, string sdk, string targetFramework)
+        public ProjectInfo(IList<NuGetInfo> packages, string sdk, string targetFramework, bool hasHashbang)
         {
             if (string.IsNullOrWhiteSpace(sdk))
             {
@@ -21,6 +21,7 @@ namespace Sprint.Parser
             Packages = packages ?? throw new ArgumentNullException(nameof(packages));
             SDK = sdk;
             TargetFramework = targetFramework;
+            HasHashbang = hasHashbang;
         }
 
         public IList<NuGetInfo> Packages { get; }
@@ -28,5 +29,7 @@ namespace Sprint.Parser
         public string SDK { get; }
 
         public string TargetFramework { get; }
+
+        public bool HasHashbang { get; }
     }
 }
