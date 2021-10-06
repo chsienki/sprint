@@ -30,7 +30,7 @@ Sprint can also be instructed to `watch` a given file, which allows you to edit 
 Sprint is distributed as a dotnet global tool. Simply run the following command to install:
 
 ```text
-dotnet tool install --global sprint --version 0.0.1-alpha
+dotnet tool install --global sprint --version 0.0.2-alpha
 ```
 
 ```txt
